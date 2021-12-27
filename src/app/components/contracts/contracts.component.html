@@ -1,4 +1,4 @@
-<div class="container-section">
+<div class="container-section" [@showOrHide]="state">
     <div class="row justify-content-center">
         <h1>Contracts for Clients</h1>
     </div>
@@ -55,8 +55,10 @@
         <div class="d-none d-lg-inline" *ngFor="let contract of contracts">
             <div class="row row-grid">
                 <div class="col-12 col-md-3">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle p-1" height="41" width="41" alt="Profile" loading="lazy"/>
-                    {{contract.name}}
+                    <div class="limit-text col">
+                        <img src="{{contract.image}}" class="rounded-circle" style="margin-right: 5px;" height="41" width="41" alt="Profile" loading="lazy"/>
+                        {{contract.name}}
+                    </div>
                 </div>
                 <div class="col-12 col-md">{{contract.type}}</div>
                 <div class="col-12 col-md">{{contract.date | date }}</div>
@@ -67,11 +69,11 @@
                 </div>
                 <div class="col-12 col-md" style="text-align: center;">
                     <button class="btn btn-options" data-bs-toggle="dropdown"></button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu"  >
                         <li><a class="dropdown-item a-edit" href="#">Edit</a></li>
                         <li><a class="dropdown-item a-sign" href="#">Sign</a></li>
                         <li><a class="dropdown-item a-summary" href="#">View summary</a></li>
-                        <li><a class="dropdown-item a-delete" href="#">Delete</a></li>
+                        <li class="non-border"><a class="dropdown-item a-delete" href="#">Delete</a></li>
                     </ul>
                 </div>
             </div>
@@ -111,7 +113,7 @@
                             <li><a class="dropdown-item a-edit" href="#">Edit</a></li>
                             <li><a class="dropdown-item a-sign" href="#">Sign</a></li>
                             <li><a class="dropdown-item a-summary" href="#">View summary</a></li>
-                            <li><a class="dropdown-item a-delete" href="#">Delete</a></li>
+                            <li class="non-border"><a class="dropdown-item a-delete" href="#">Delete</a></li>
                         </ul>
 
                     </div>
@@ -121,3 +123,5 @@
 
     </div>
 </div>
+
+<app-spinner-page [@showOrHide]="state2" *ngIf="state2 == 'show'"></app-spinner-page>

@@ -1,0 +1,14 @@
+@import '../../../styles.scss';
+
+.spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.spinner-border {
+    align-self: center;
+    color: $primary-color;
+}

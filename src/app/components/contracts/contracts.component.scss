@@ -20,19 +20,13 @@ input::placeholder {
 }
 
 .form-search::placeholder {
-    background-position-y: center;
-    background-position-x: left;
+    @include backImage(center, left, '../../../assets/images/icons/search.png');
     padding-left: 2rem;
-    background-image: url(../../../assets/images/icons/search.png);
-    background-repeat: no-repeat;
 }
 
 .filter-select {
-    background-color: $white-color;
     height: 40px;
-    mix-blend-mode: normal;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
     color: $placeholder-text;
     padding-left: 1rem;
     font-size: 12px;
@@ -45,30 +39,20 @@ input::placeholder {
 }
 
 .datepicker {
-    background-image: url(../../../assets/images/icons/calendar.png);
-    background-repeat: no-repeat;
-    background-position-y: center;
-    background-position-x: 0.5rem;
+    @include backImage(center, 0.5rem, '../../../assets/images/icons/calendar.png');
     padding-right: 1rem;
     padding-left: 2rem;
     &::-webkit-calendar-picker-indicator { 
-        background-image: url(../../../assets/images/icons/key_arrow.png);
-        background-position-y: center;
-    }
-    &::before {
-        background-image: url(../../../assets/images/icons/calendar.png);
+        @include backImage(center, "", "../../../assets/images/icons/key_arrow.png");
     }
 }
 
 select {
-    background-image: url(../../../assets/images/icons/key_arrow.png);
-    background-repeat: no-repeat;
+    @include backImage(center, "", '../../../assets/images/icons/key_arrow.png');
 }
 
 .btn-new {
-    background: $primary-color;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    @include blendInputs($primary-color, "", 0px 4px 20px rgba(0, 0, 0, 0.25), 5px);
     color: $white-color;
     height: 58px;
 }
@@ -88,23 +72,19 @@ select {
     margin-right: 5px;
     vertical-align: middle;
     background-color: transparent;
-    background-position : center center;
-    background-repeat:no-repeat;
 }
 
 .btn-new:before {
-     background-image : url(../../../assets/images/icons/add.png);
+    @include backImage(center, center, '../../../assets/images/icons/add.png');
 }
 
 .btn-filter:before {
-    background-image: url(../../../assets/images/icons/filter.png);
+    @include backImage(center, center, '../../../assets/images/icons/filter.png');
 }
 
 .bg-container {
+    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
     background: $white-color;
-    mix-blend-mode: normal;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
     padding-left: 2%;
     padding-right: 2%;
 }
@@ -125,9 +105,7 @@ select {
 }
 
 .btn-options {
-    background-image: url(../../../assets/images/icons/points.png);
-    background-position : center center;
-    background-repeat:no-repeat;
+    @include backImage(center, center, "../../../assets/images/icons/points.png");
     height: 35px;
     text-align: center;
 }
@@ -143,10 +121,8 @@ select {
 }
 
 .row-grid-mobile {
+    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
     background: $white-color;
-    mix-blend-mode: normal;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
     padding: 10px;
     div {
         @include styleFont(12px, normal, normal, 24px, 0.1px, $color-letter);
@@ -170,10 +146,7 @@ select {
 }
 
 .dropdown-menu {
-    background: #FFFFFF;
-    mix-blend-mode: normal;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
     li {
         padding: 0.5rem 0 0.5rem 0;
         margin-right: 1rem;
@@ -183,34 +156,25 @@ select {
     li a {
         padding-left: 2rem;
     }
+    .non-border {
+        border: none;
+    }
 }
 
 .a-edit {
-    background-image: url(../../../assets/images/icons/edit.png);
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: center;
+    @include backImage(center, left, "../../../assets/images/icons/edit.png");
 }
 
 .a-delete {
-    background-image: url(../../../assets/images/icons/delete.png);
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: center;
+    @include backImage(center, left, "../../../assets/images/icons/delete.png");
 }
 
 .a-sign {
-    background-image: url(../../../assets/images/icons/sing.png);
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: center;
+    @include backImage(center, left, "../../../assets/images/icons/sing.png");
 }
 
 .a-summary {
-    background-image: url(../../../assets/images/icons/document.png);
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: center;
+    @include backImage(center, left, "../../../assets/images/icons/document.png");
 
 }
 

@@ -38,15 +38,41 @@ $color-pending: #F29D42;
     color: $color;
 }
 
+/* add background-image */
+@mixin backImage($bgpositiony, $bgpositionx, $bgimage) {
+    background-position-y: $bgpositiony;
+    background-position-x: $bgpositionx;
+    background-image: url($bgimage);
+    background-repeat: no-repeat;
+}
+
+
+/* style inputs */
+@mixin blendInputs($color, $blend, $shadow, $radius) {
+    background-color: $color;
+    mix-blend-mode: $blend;
+    box-shadow: $shadow;
+    border-radius: $radius;
+}
 
 body {
     background-color: $layout-color !important;
 }
 
+.container {
+    max-width: 1440px;
+}
+
 .container-section {
     font-family: 'Aileron';
     background-color: $layout-color;
-    padding: 5% 5%;
+    padding: 5% 3%;
+}
+
+.limit-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 /* buttons */

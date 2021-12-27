@@ -9,6 +9,8 @@
 
 .navbar-nav {
     width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .nav-item {
@@ -19,20 +21,34 @@
     line-height: 24px;
     letter-spacing: 0.18px;
     color: $secondary-color;
-    margin-left: 2%;
-    margin-right: 2%;
     .nav-link {
-        padding-top: 2em;
+        padding: 2em 0 0 0;
         height: 100px;
+        text-align: center;
     }
 
     .active {
         color: $primary-color;
-        border-bottom: 6px solid $primary-color;
     }
 
     img {
         padding: 5px;
+    }
+
+    #contract {
+        @include backImage(center, 1rem, "../../assets/images/icons/user.png");
+    }
+
+    #document {
+        @include backImage(center, 1rem, "../../assets/images/icons/document.png");
+    }
+
+    #card {
+        @include backImage(center, 1rem, "../../assets/images/icons/card.png");
+    }
+
+    #calendar {
+        @include backImage(center, 1rem, "../../assets/images/icons/calendar.png");
     }
 }
 
@@ -44,6 +60,32 @@
     left: 0;
     height: 45px;
     width: 1px;
+}
+
+.nav-link::after{
+    content:'';display:block;
+    width:0px;
+    height:6px;
+    background: $primary-color;
+    transition: 0.2s;
+    transform: translateY(2.1rem);
+}
+
+.nav-link:hover::after {width:100%;}
+.nav-link:hover {
+    color: $primary-color !important;
+}
+
+.active::after {
+    width: 100%;
+}
+
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
 }
 
 @media (max-width: 991px) {
