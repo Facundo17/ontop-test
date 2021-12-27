@@ -1,0 +1,123 @@
+<div class="container-section">
+    <div class="row justify-content-center">
+        <h1>Contracts for Clients</h1>
+    </div>
+    <div class="row pt-4">
+        <div class="col-md-7 pt-2">
+            <input class="form-control form-search" type="text" placeholder="Search">
+        </div>
+        <div class="col-4 col-md-2 d-grid pt-2">
+            <button class="btn btn-filter b-image" type="button">
+                Filter
+            </button>
+        </div>
+        <div class="col-8 col-md-3 d-grid pt-2">
+            <button class="btn btn-new b-image" type="button">
+                New hire
+            </button>
+        </div>
+    </div>
+
+    <div class="row pt-4">
+        <div class="col-lg-3 pt-2">
+            <input class="filter-select datepicker form-control" id="date" name="date" placeholder="Create on: Jan/10/21 - Jan/28/21" type="date"/>
+        </div>
+        <div class="col-lg-2 pt-2">
+            <select class="filter-select form-select form-control">
+                <option selected>Contact Type</option>
+                <option value="1">Type 1</option>
+                <option value="2">Type 2</option>
+            </select>
+        </div>
+        <div class="col-lg-4 pt-2">
+            <input class="filter-select form-control" type="text" placeholder="Contractor name">
+        </div>
+        <div class="col-lg-3 pt-2">
+            <select class="filter-select form-select form-control">
+                <option selected>Status</option>
+                <option value="1">Active</option>
+                <option value="2">Pending</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="bg-container mt-5">
+
+        <div class="row title d-none d-lg-flex">
+            <div class="col-3">Contractor name</div>
+            <div class="col">Type</div>
+            <div class="col">Start date</div>
+            <div class="col">Amount</div>
+            <div class="col-3">Status</div>
+            <div class="col">Actions</div>
+        </div>
+
+        <div class="d-none d-lg-inline" *ngFor="let contract of contracts">
+            <div class="row row-grid">
+                <div class="col-12 col-md-3">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle p-1" height="41" width="41" alt="Profile" loading="lazy"/>
+                    {{contract.name}}
+                </div>
+                <div class="col-12 col-md">{{contract.type}}</div>
+                <div class="col-12 col-md">{{contract.date | date }}</div>
+                <div class="col-12 col-md">${{contract.amount}} USD</div>
+                <div class="col-12 col-md-3 d-grid">
+                    <button class="btn btn-active" *ngIf="contract.status == 'active'"><span class="dot-active"></span>Active</button>
+                    <button class="btn btn-pending" *ngIf="contract.status == 'pending'"><span class="dot-pending"></span>Signature pending</button>
+                </div>
+                <div class="col-12 col-md" style="text-align: center;">
+                    <button class="btn btn-options" data-bs-toggle="dropdown"></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item a-edit" href="#">Edit</a></li>
+                        <li><a class="dropdown-item a-sign" href="#">Sign</a></li>
+                        <li><a class="dropdown-item a-summary" href="#">View summary</a></li>
+                        <li><a class="dropdown-item a-delete" href="#">Delete</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-inline d-lg-none" *ngFor="let contract of contracts">
+            <div class="row row-grid-mobile mt-4 justify-content-center">
+                <div class="row">
+                    <div class="col-6 t">Contractor name</div>
+                    <div class="col-6">{{contract.name}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 t">Type</div>
+                    <div class="col-6">{{contract.type}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 t">Start date</div>
+                    <div class="col-6">{{contract.date | date }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 t">Amount</div>
+                    <div class="col-6">${{contract.amount}} USD</div>
+                </div>
+                <div class="row">
+                    <div class="col-6 t">Status</div>
+                    <div class="col-6 d-grid">
+                        <button class="btn btn-active" *ngIf="contract.status == 'active'"><span class="dot-active"></span>Active</button>
+                        <button class="btn btn-pending" *ngIf="contract.status == 'pending'"><span class="dot-pending"></span>Signature pending</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 t">Actions</div>
+                    <div class="col-6" style="text-align: center;">
+                        <button class="btn btn-options" data-bs-toggle="dropdown"></button>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item a-edit" href="#">Edit</a></li>
+                            <li><a class="dropdown-item a-sign" href="#">Sign</a></li>
+                            <li><a class="dropdown-item a-summary" href="#">View summary</a></li>
+                            <li><a class="dropdown-item a-delete" href="#">Delete</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

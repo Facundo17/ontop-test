@@ -1,0 +1,14 @@
+@import '../../styles.scss';
+
+.floating-button {
+    background-color: $primary-color;
+    box-sizing: border-box;
+    margin: 5%;
+    position: fixed;
+    white-space: nowrap;
+    z-index: 30;
+    right: 0; 
+    bottom: 0;
+    width: 79px;
+    height: 79px;
+}

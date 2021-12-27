@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*variables*/
+$primary-color: #FF5A70;
+$secondary-color: #898989;
+$white-color: #FFFFFF;
+$layout-color: #F9F9F9;
+$black-color: #000000;
+$color-input: #989B9B;
+$placeholder-text: #C4C4C4;
+$color-filter: #1C0B11;
+$color-button-default: #EBEBEB;
+$color-letter: #3B3B3B;
+$bgcolor-active: rgba(54, 207, 130, 0.18);
+$color-active: #36CF82;
+$bgcolor-pending: rgba(242, 157, 66, 0.3);
+$color-pending: #F29D42;
+
+
+/* create dots */
+@mixin dot($height, $width, $color) {
+    height: $height;
+    width: $width;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    background-color: $color;
+}
+
+/* custom fonts-styles */
+@mixin styleFont($size, $style, $weight, $l-height, $l-spacing, $color) {
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $l-height;
+    letter-spacing: $l-spacing;
+    color: $color;
+}
+
+
+body {
+    background-color: $layout-color !important;
+}
+
+.container-section {
+    font-family: 'Aileron';
+    background-color: $layout-color;
+    padding: 5% 5%;
+}
+
+/* buttons */
+.btn-active {
+    background: $bgcolor-active;
+    @include styleFont(10px, normal, normal, 12px, 0, $color-active);
+    border-radius: 20px;
+    text-align: left;
+}
+
+.btn-pending {
+    background: $bgcolor-pending;
+    border-radius: 20px;
+    @include styleFont(10px, normal, normal, 12px, 0, $color-pending);
+    text-align: left;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: 'Aileron';
+    src: url(./assets/fonts/Aileron-Regular.otf);
+}
+
+html, body { height: 100%; }

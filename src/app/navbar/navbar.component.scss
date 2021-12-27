@@ -1,0 +1,53 @@
+@import "../../styles.scss";
+
+.navbar {
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+    background-color: $white-color;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.nav-item {
+    font-family: 'Aileron';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0.18px;
+    color: $secondary-color;
+    margin-left: 2%;
+    margin-right: 2%;
+    .nav-link {
+        padding-top: 2em;
+        height: 100px;
+    }
+
+    .active {
+        color: $primary-color;
+        border-bottom: 6px solid $primary-color;
+    }
+
+    img {
+        padding: 5px;
+    }
+}
+
+.login-logo::after {
+    content: "";
+    background: #C4C4C4;
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    height: 45px;
+    width: 1px;
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+}
