@@ -14,6 +14,10 @@ input, select {
     padding-right: 2rem;
 }
 
+.btn-active:focus, .btn-pending:focus {
+    box-shadow: none;
+}
+
 input::placeholder {
     font-family: 'Aileron';
     @include styleFont(16px, normal, normal, 24px, 0.1px, $placeholder-text);
@@ -21,7 +25,7 @@ input::placeholder {
 
 .form-search::placeholder {
     @include backImage(center, left, '../../../assets/images/icons/search.png');
-    padding-left: 2rem;
+    padding: 2em;
 }
 
 .filter-select {
@@ -45,10 +49,16 @@ input::placeholder {
     &::-webkit-calendar-picker-indicator { 
         @include backImage(center, "", "../../../assets/images/icons/key_arrow.png");
     }
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 select {
     @include backImage(center, "", '../../../assets/images/icons/key_arrow.png');
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .btn-new {
