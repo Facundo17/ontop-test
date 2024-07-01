@@ -10,8 +10,7 @@ input, select {
     border-radius: 5px;
     width: 100%;
     height: 58px;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 0 2em 0 2em;
 }
 
 .btn-active:focus, .btn-pending:focus {
@@ -30,7 +29,7 @@ input::placeholder {
 
 .filter-select {
     height: 40px;
-    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
+    @include blendInputs($white-color, normal, $shadow, 5px);
     color: $placeholder-text;
     padding-left: 1rem;
     font-size: 12px;
@@ -43,9 +42,8 @@ input::placeholder {
 }
 
 .datepicker {
-    @include backImage(center, 0.5rem, '../../../assets/images/icons/calendar.png');
-    padding-right: 1rem;
-    padding-left: 2rem;
+    @include backImage(center, 0.5em, '../../../assets/images/icons/calendar.png');
+    padding: 0 1em 0 2em;
     &::-webkit-calendar-picker-indicator { 
         @include backImage(center, "", "../../../assets/images/icons/key_arrow.png");
     }
@@ -62,7 +60,7 @@ select {
 }
 
 .btn-new {
-    @include blendInputs($primary-color, "", 0px 4px 20px rgba(0, 0, 0, 0.25), 5px);
+    @include blendInputs($primary-color, "", $shadow, 5px);
     color: $white-color;
     height: 58px;
 }
@@ -93,10 +91,9 @@ select {
 }
 
 .bg-container {
-    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
+    @include blendInputs($white-color, normal, $shadow, 5px);
     background: $white-color;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 0 2% 0 2%;
 }
 
 .title {
@@ -130,41 +127,15 @@ select {
     }
 }
 
-.row-grid-mobile {
-    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
-    background: $white-color;
-    padding: 10px;
-    div {
-        @include styleFont(12px, normal, normal, 24px, 0.1px, $color-letter);
-    }
-    .row .t {
-        @include styleFont(12px, normal, bold, 24px, 0.1px, $black-color);
-    }
-    .row div {
-        text-align: left !important;
-        padding: 0.9rem 0 0.9rem 2rem;
-    }
-    .row:nth-child(odd) {
-        background-color: $layout-color;
-    }
-    .btn-pending {
-        @include styleFont(8px, normal, normal, 10px, 0, $color-pending);
-    }
-    .btn-active {
-        @include styleFont(8px, normal, normal, 8px, 0, $color-active);
-    }
-}
-
 .dropdown-menu {
-    @include blendInputs($white-color, normal, 0px 4px 15px rgba(0, 0, 0, 0.1), 5px);
+    @include blendInputs($white-color, normal, $shadow, 5px);
     li {
-        padding: 0.5rem 0 0.5rem 0;
-        margin-right: 1rem;
-        margin-left: 1rem;
+        padding: 0.5em 0 0.5em 0;
+        margin-right: 0 1em 0 1em;
         border-bottom: 1px solid #EBEBEB;
     }
     li a {
-        padding-left: 2rem;
+        padding-left: 2em;
     }
     .non-border {
         border: none;
@@ -185,17 +156,4 @@ select {
 
 .a-summary {
     @include backImage(center, left, "../../../assets/images/icons/document.png");
-
-}
-
-@media (max-width: 992px) {
-    .bg-container {
-        background: none;
-        box-shadow: initial;
-    }
-
-    .btn-options {
-        transform: rotate(90deg);
-        margin-left: 0.5rem;
-    }
 }
