@@ -10,6 +10,7 @@ import { ContractsComponent } from './components/contracts/contracts.component';
 import { ActionButtonComponent } from './components/action-button/action-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerPageComponent } from './components/spinner-page/spinner-page.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SpinnerPageComponent } from './components/spinner-page/spinner-page.com
     NavbarComponent,
     ContractsComponent,
     ActionButtonComponent,
-    SpinnerPageComponent
+    SpinnerPageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -128,6 +128,7 @@ select {
 }
 
 .dropdown-menu {
+    padding: 0.5em 1em;
     @include blendInputs($white-color, normal, $shadow, 5px);
     li {
         padding: 0.5em 0 0.5em 0;
